@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   let visible = $state(false);
   let activeTab = $state(1);
@@ -50,7 +51,7 @@
 
     <div class="tabs">
       {#each tabs as tab}
-        <button class="tab-btn" class:active={activeTab === tab.id} on:click={() => activeTab = tab.id}>
+        <button class="tab-btn" class:active={activeTab === tab.id} onclick={() => activeTab = tab.id}>
           0{tab.id}
         </button>
       {/each}
@@ -76,7 +77,7 @@
       </div>
     </div>
 
-    <a href="/progetti" class="cta-btn">ESPLORA I PROGETTI →</a>
+    <a href="{base}/progetti" class="cta-btn">ESPLORA I PROGETTI →</a>
   </div>
 </div>
 
@@ -92,39 +93,20 @@
 
   .page.visible { opacity: 1; }
 
-  .image-col {
-    background: #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-  }
+  .image-col { background: #1a1a1a; display: flex; flex-direction: column; height: 100%; overflow: hidden; }
 
   .image-placeholder { flex: 1; overflow: hidden; }
   .image-placeholder svg { width: 100%; height: 100%; display: block; object-fit: cover; }
 
   .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
 
-  .stat-card {
-    padding: 1.25rem 1rem;
-    background: #111;
-    border-top: 1px solid #2a2a2a;
-    border-right: 1px solid #2a2a2a;
-  }
-
+  .stat-card { padding: 1.25rem 1rem; background: #111; border-top: 1px solid #2a2a2a; border-right: 1px solid #2a2a2a; }
   .stat-card:last-child { border-right: none; }
 
   .stat-num { font-family: var(--font-serif); font-size: 2rem; font-weight: 900; color: #fff; line-height: 1; }
   .stat-lbl { font-size: 0.6rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
 
-    .content-col {
-        padding: 1.5rem 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-        overflow-y: auto;
-    }
+  .content-col { padding: 1.5rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1rem; overflow-y: auto; }
 
   .section-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--fg-muted); }
   .dot-red { color: var(--accent); font-size: 0.5rem; }
@@ -134,16 +116,7 @@
 
   .tabs { display: flex; gap: 0.5rem; }
 
-  .tab-btn {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.7rem;
-    font-family: var(--font-sans);
-    color: var(--fg-muted);
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-    background: transparent;
-  }
-
+  .tab-btn { padding: 0.4rem 0.75rem; font-size: 0.7rem; font-family: var(--font-sans); color: var(--fg-muted); border: 1px solid var(--border); transition: all 0.2s; background: transparent; }
   .tab-btn.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 
   .bio-text { font-size: 1.1rem; line-height: 1.75; color: var(--fg); font-weight: 300; }
@@ -152,32 +125,10 @@
 
   .passioni-list { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-  .passione-chip {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--border);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    transition: all 0.2s;
-  }
-
+  .passione-chip { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--border); font-size: 0.7rem; letter-spacing: 0.1em; transition: all 0.2s; }
   .passione-chip:hover { border-color: var(--fg); background: var(--fg); color: var(--bg); }
 
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    background: var(--fg);
-    color: var(--bg);
-    padding: 1rem 2rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    font-weight: 500;
-    align-self: flex-start;
-    transition: background 0.2s;
-  }
-
+  .cta-btn { display: inline-flex; align-items: center; background: var(--fg); color: var(--bg); padding: 1rem 2rem; font-size: 0.7rem; letter-spacing: 0.12em; font-weight: 500; align-self: flex-start; transition: background 0.2s; }
   .cta-btn:hover { background: var(--accent); }
 
   @media (max-width: 768px) {

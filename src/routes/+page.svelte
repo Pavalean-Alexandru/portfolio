@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   let visible = $state(false);
   onMount(() => {
@@ -22,8 +23,8 @@
   <p class="subtitle">STUDENTE · ISTITUTO EDOARDO AGNELLI</p>
 
   <div class="hero-cta">
-    <a href="/chi-sono" class="btn btn-solid">CHI SONO →</a>
-    <a href="/progetti" class="btn btn-outline">PROGETTI →</a>
+    <a href="{base}/chi-sono" class="btn btn-solid">CHI SONO →</a>
+    <a href="{base}/progetti" class="btn btn-outline">PROGETTI →</a>
   </div>
 
   <div class="hero-stats">

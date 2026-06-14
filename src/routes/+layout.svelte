@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
   import { page } from '$app/stores';
+  import { base } from '$app/paths';
 
   let { children } = $props();
   let menuOpen = $state(false);
@@ -20,8 +21,8 @@
 
 <header>
   <div class="header-left">
-    {#if $page.url.pathname === '/'}
-      <a href="/" class="logo">Alexandru.</a>
+    {#if $page.url.pathname === `${base}/` || $page.url.pathname === base}
+      <a href="{base}/" class="logo">Alexandru.</a>
     {:else}
       <button class="back-btn" onclick={goBack}>
         ← INDIETRO
@@ -39,9 +40,9 @@
     <nav class="menu-nav">
       <button class="menu-close" onclick={closeMenu}>✕</button>
       <ul>
-        <li><a href="/" onclick={closeMenu}>Home</a></li>
-        <li><a href="/chi-sono" onclick={closeMenu}>Chi Sono</a></li>
-        <li><a href="/progetti" onclick={closeMenu}>Progetti</a></li>
+        <li><a href="{base}/" onclick={closeMenu}>Home</a></li>
+        <li><a href="{base}/chi-sono" onclick={closeMenu}>Chi Sono</a></li>
+        <li><a href="{base}/progetti" onclick={closeMenu}>Progetti</a></li>
       </ul>
       <div class="menu-footer">
         <span>Alexandru Pavalean</span>
@@ -54,9 +55,6 @@
 <main>
   {@render children()}
 </main>
-
-<script module>
-</script>
 
 <style>
   header {
