@@ -32,8 +32,6 @@
       <span class="stat-item">3 ANNI</span>
       <span class="dot">·</span>
       <span class="stat-item">9 PROGETTI</span>
-      <span class="dot">·</span>
-      <span class="stat-item">5 DISCIPLINE</span>
     </div>
   </div>
 </section>
