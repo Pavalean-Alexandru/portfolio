@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   let visible = $state(false);
   let hoveredYear = $state(null);
@@ -61,11 +62,13 @@
 
   {#each anni as anno, i}
     <div
-  class="anno-row"
-  class:hovered={hoveredYear === anno.anno}
-  onmouseenter={() => hoveredYear = anno.anno}
-  onmouseleave={() => hoveredYear = null}
->
+      class="anno-row"
+      class:hovered={hoveredYear === anno.anno}
+      onmouseenter={() => hoveredYear = anno.anno}
+      onmouseleave={() => hoveredYear = null}
+      role="region"
+      aria-label={anno.titolo}
+    >
       <div class="anno-left">
         <span class="anno-num">{anno.anno}°</span>
         <div class="anno-info">
@@ -99,7 +102,7 @@
 
   <div class="page-footer">
     <p>Istituto Edoardo Agnelli · Torino · 2023–2026</p>
-    <a href="/chi-sono" class="footer-link">← Chi Sono</a>
+    <a href="{base}/chi-sono" class="footer-link">← Chi Sono</a>
   </div>
 </div>
 
@@ -122,7 +125,6 @@
   }
 
   .label { font-size: 0.68rem; letter-spacing: 0.12em; color: var(--fg-muted); margin-bottom: 0.25rem; }
-
   h1 { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
   .accent { color: var(--accent); }
   .meta { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--fg-muted); padding-bottom: 0.5rem; }
@@ -153,14 +155,11 @@
   }
 
   .anno-row.hovered .anno-num { color: #ccc; }
-
   .anno-title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; transition: color 0.2s; }
   .anno-row.hovered .anno-title { color: var(--accent); }
-
   .anno-meta { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--fg-muted); margin-top: 0.35rem; }
 
   .anno-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; max-width: 250px; }
-
   .tag { padding: 0.25rem 0.6rem; font-size: 0.62rem; letter-spacing: 0.08em; border: 1px solid var(--border); color: var(--fg-muted); white-space: nowrap; }
   .tag.tag-accent { border-color: var(--accent); color: var(--accent); }
 
