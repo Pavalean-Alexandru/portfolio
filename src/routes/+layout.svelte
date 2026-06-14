@@ -22,7 +22,6 @@
 <header>
   <div class="header-left">
     {#if $page.url.pathname === `${base}/` || $page.url.pathname === base}
-      <a href="{base}/" class="logo">Alexandru.</a>
     {:else}
       <button class="back-btn" onclick={goBack}>
         ← INDIETRO

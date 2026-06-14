@@ -6,7 +6,7 @@
 
   const tabs = [
     { id: 1, content: 'Mi chiamo Alexandru Pavalean, ho 18 anni e sono uno studente dell\'Istituto Edoardo Agnelli di Torino. Sono un ragazzo tranquillo e collaborativo, sempre disponibile a lavorare in gruppo e ad affrontare nuove sfide con impegno e serietà.' },
-    { id: 2, content: 'Frequento il quinto anno dell\'istituto tecnico, indirizzo informatica e telecomunicazioni. In questi tre anni ho sviluppato competenze in programmazione, sistemi informatici, storia e italiano.' },
+    { id: 2, content: 'Frequento il quinto anno dell\'istituto tecnico, indirizzo informatica e telecomunicazioni. In questi tre anni ho sviluppato competenze in programmazione, sistemi informatici.' },
     { id: 3, content: 'Sono motivato a crescere nel campo dell\'informatica e della tecnologia. Voglio continuare a formarmi e mettere a frutto le competenze acquisite durante il percorso scolastico.' }
   ];
 
